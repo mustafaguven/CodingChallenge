@@ -1,0 +1,84 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.mguven.bonial"
+        minSdkVersion 19
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+
+        final STRING = "String"
+        final API_KEY = "API_KEY"
+
+        debug {
+            buildConfigField(STRING, API_KEY, '"00788795ed3e48d2bf101a35c9b4618e"')
+        }
+        release {
+            buildConfigField("String", API_KEY, '"00788795ed3e48d2bf101a35c9b4618e"')
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+
+
+def supportAppCompat = "28.0.0"
+def dagger = "2.16"
+def retrofit = "2.4.0"
+def rxJava2 = "2.2.2"
+def rxAndroid = "2.1.0"
+def rxJavaRetrofitAdapter = "1.0.0"
+def recyclerView = "28.0.0"
+def loggingInterceptor = "3.9.1"
+def archExtensions = "1.1.1"
+def archViewModel = "1.1.1"
+def paging = "1.0.1"
+def timber = "4.7.0"
+def picasso = "2.71828"
+def joda = "2.9.6"
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "com.android.support:appcompat-v7:$supportAppCompat"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation "com.squareup.retrofit2:retrofit:$retrofit"
+    implementation "io.reactivex.rxjava2:rxjava:$rxJava2"
+    implementation "io.reactivex.rxjava2:rxandroid:$rxAndroid"
+    implementation "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:$rxJavaRetrofitAdapter"
+    implementation "com.android.support:cardview-v7:$supportAppCompat"
+
+
+    implementation "android.arch.lifecycle:extensions:$archExtensions"
+    implementation "android.arch.lifecycle:viewmodel:$archViewModel"
+
+    implementation "android.arch.paging:runtime:$paging"
+    implementation "android.arch.paging:rxjava2:$paging"
+
+    implementation "com.squareup.picasso:picasso:$picasso"
+    implementation 'com.jakewharton.picasso:picasso2-okhttp3-downloader:1.1.0'
+
+    implementation "com.squareup.okhttp3:logging-interceptor:$loggingInterceptor"
+    implementation "com.android.support:recyclerview-v7:$recyclerView"
+    implementation "com.jakewharton.timber:timber:$timber"
+
+    implementation "joda-time:joda-time:$joda"
+
+    kapt "com.google.dagger:dagger-compiler:$dagger"
+
+    implementation "com.squareup.retrofit2:converter-moshi:$retrofit"
+    implementation "com.google.dagger:dagger:$dagger"
+    annotationProcessor "com.google.dagger:dagger-compiler:$dagger"
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+}
