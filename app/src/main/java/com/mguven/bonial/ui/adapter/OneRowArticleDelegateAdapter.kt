@@ -1,7 +1,7 @@
 package com.mguven.bonial.ui.adapter
 
-import android.support.v7.widget.RecyclerView
-import android.support.v7.widget.StaggeredGridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -20,19 +20,19 @@ import com.mguven.bonial.model.Article
 
 class OneRowArticleDelegateAdapter : ViewTypeDelegateAdapter {
 
-  override fun onCreateViewHolder(parent: ViewGroup): RecyclerView.ViewHolder {
+  override fun onCreateViewHolder(parent: ViewGroup): androidx.recyclerview.widget.RecyclerView.ViewHolder {
     return ExpandedArticleViewHolder(
         LayoutInflater.from(parent.context)
             .inflate(R.layout.expanded_article_item, parent, false))
   }
 
-  override fun onBindViewHolder(holder: RecyclerView.ViewHolder, item: ViewType) {
-    val layoutParams = holder.itemView.layoutParams as StaggeredGridLayoutManager.LayoutParams
+  override fun onBindViewHolder(holder: androidx.recyclerview.widget.RecyclerView.ViewHolder, item: ViewType) {
+    val layoutParams = holder.itemView.layoutParams as androidx.recyclerview.widget.StaggeredGridLayoutManager.LayoutParams
     layoutParams.isFullSpan = true
     (holder as OneRowArticleDelegateAdapter.ExpandedArticleViewHolder).bind(item as Article)
   }
 
-  private inner class ExpandedArticleViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+  private inner class ExpandedArticleViewHolder(itemView: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView) {
 
     fun bind(article: Article) {
       itemView.findBy(R.id.tvTitle, TextView::class.java).text = article.title

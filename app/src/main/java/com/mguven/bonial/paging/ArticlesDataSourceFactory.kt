@@ -1,7 +1,7 @@
 package com.mguven.bonial.paging
 
-import android.arch.lifecycle.MutableLiveData
-import android.arch.paging.DataSource
+import androidx.lifecycle.MutableLiveData
+import androidx.paging.DataSource
 import com.mguven.bonial.model.Article
 import com.mguven.bonial.network.NewsApi
 import io.reactivex.disposables.CompositeDisposable

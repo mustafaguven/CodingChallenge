@@ -1,16 +1,16 @@
 package com.mguven.bonial.viewmodel
 
-import android.arch.lifecycle.LiveData
-import android.arch.lifecycle.MutableLiveData
-import android.arch.paging.PagedList
-import android.arch.paging.RxPagedListBuilder
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.paging.PagedList
+import androidx.paging.RxPagedListBuilder
 import com.mguven.bonial.model.Article
 import com.mguven.bonial.network.NewsApi
 import com.mguven.bonial.paging.ArticlesDataSourceFactory
 import io.reactivex.Observable
 import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
-import android.arch.lifecycle.Transformations
+import androidx.lifecycle.Transformations
 import com.mguven.bonial.paging.ArticlesDataSource
 import com.mguven.bonial.paging.NetworkState
 

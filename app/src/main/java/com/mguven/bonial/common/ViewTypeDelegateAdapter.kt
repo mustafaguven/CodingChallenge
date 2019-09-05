@@ -1,13 +1,13 @@
 package com.mguven.bonial.common
 
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.ViewGroup
 
 interface ViewTypeDelegateAdapter {
 
-  fun onCreateViewHolder(parent: ViewGroup): RecyclerView.ViewHolder
+  fun onCreateViewHolder(parent: ViewGroup): androidx.recyclerview.widget.RecyclerView.ViewHolder
 
-  fun onBindViewHolder(holder: RecyclerView.ViewHolder, item: ViewType)
+  fun onBindViewHolder(holder: androidx.recyclerview.widget.RecyclerView.ViewHolder, item: ViewType)
 
 
 }
