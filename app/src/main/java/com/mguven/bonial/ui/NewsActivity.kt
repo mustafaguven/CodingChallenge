@@ -1,7 +1,7 @@
 package com.mguven.bonial.ui
 
 import android.annotation.SuppressLint
-import android.arch.lifecycle.Observer
+import androidx.lifecycle.Observer
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast

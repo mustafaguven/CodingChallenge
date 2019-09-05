@@ -1,7 +1,7 @@
 package com.mguven.bonial.ui.adapter
 
 import android.app.ActionBar
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -20,17 +20,17 @@ import com.mguven.bonial.model.Article
 
 class ArticleDelegateAdapter : ViewTypeDelegateAdapter {
 
-  override fun onCreateViewHolder(parent: ViewGroup): RecyclerView.ViewHolder {
+  override fun onCreateViewHolder(parent: ViewGroup): androidx.recyclerview.widget.RecyclerView.ViewHolder {
     return ArticleHolder(
         LayoutInflater.from(parent.context)
             .inflate(R.layout.article_item, parent, false))
   }
 
-  override fun onBindViewHolder(holder: RecyclerView.ViewHolder, item: ViewType) {
+  override fun onBindViewHolder(holder: androidx.recyclerview.widget.RecyclerView.ViewHolder, item: ViewType) {
     (holder as ArticleHolder).bind(item as Article)
   }
 
-  private inner class ArticleHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+  private inner class ArticleHolder(itemView: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView) {
 
     fun bind(article: Article) {
       itemView.findBy(R.id.tvTitle, TextView::class.java).text = article.title

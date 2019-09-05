@@ -1,6 +1,6 @@
 package com.mguven.bonial.di
 
-import android.arch.lifecycle.ViewModel
+import androidx.lifecycle.ViewModel
 
 import com.mguven.bonial.viewmodel.NewsViewModel
 

@@ -1,9 +1,9 @@
 package com.mguven.bonial.ui.adapter
 
-import android.arch.paging.PagedListAdapter
-import android.support.v4.util.SparseArrayCompat
-import android.support.v7.util.DiffUtil
-import android.support.v7.widget.RecyclerView
+import androidx.paging.PagedListAdapter
+import androidx.collection.SparseArrayCompat
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.RecyclerView
 import android.view.ViewGroup
 import com.mguven.bonial.common.ViewType
 import com.mguven.bonial.common.ViewTypeDelegateAdapter
@@ -11,11 +11,11 @@ import com.mguven.bonial.model.Article
 import com.mguven.bonial.paging.NetworkState
 
 
-class NewsAdapter : PagedListAdapter<Article, RecyclerView.ViewHolder>(articleDiff) {
+class NewsAdapter : PagedListAdapter<Article, androidx.recyclerview.widget.RecyclerView.ViewHolder>(articleDiff) {
 
   private var networkState: NetworkState? = NetworkState.LOADING
 
-  private val delegateAdapters = SparseArrayCompat<ViewTypeDelegateAdapter>()
+  private val delegateAdapters = androidx.collection.SparseArrayCompat<ViewTypeDelegateAdapter>()
 
   companion object {
     const val CLUSTER_SIZE = 7
@@ -37,13 +37,13 @@ class NewsAdapter : PagedListAdapter<Article, RecyclerView.ViewHolder>(articleDi
     delegateAdapters.put(NewsAdapterConstant.NORMAL_ARTICLE, ArticleDelegateAdapter())
   }
 
-  override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+  override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): androidx.recyclerview.widget.RecyclerView.ViewHolder {
     return delegateAdapters.get(viewType)!!.onCreateViewHolder(viewGroup)
   }
 
   private fun hasExtraRow(): Boolean = networkState == NetworkState.LOADED
 
-  override fun onBindViewHolder(viewHolder: RecyclerView.ViewHolder, position: Int) {
+  override fun onBindViewHolder(viewHolder: androidx.recyclerview.widget.RecyclerView.ViewHolder, position: Int) {
     delegateAdapters.get(getItemViewType(position))!!.onBindViewHolder(viewHolder, getItem(position) as ViewType)
   }
 

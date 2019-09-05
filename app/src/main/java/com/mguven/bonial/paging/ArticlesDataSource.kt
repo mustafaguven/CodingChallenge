@@ -1,8 +1,8 @@
 package com.mguven.bonial.paging
 
-import android.arch.lifecycle.MutableLiveData
-import android.arch.paging.PageKeyedDataSource
-import android.support.v7.util.DiffUtil
+import androidx.lifecycle.MutableLiveData
+import androidx.paging.PageKeyedDataSource
+import androidx.recyclerview.widget.DiffUtil
 import com.mguven.bonial.model.Article
 import com.mguven.bonial.network.NewsApi
 import io.reactivex.android.schedulers.AndroidSchedulers
